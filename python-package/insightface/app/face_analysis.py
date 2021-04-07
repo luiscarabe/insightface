@@ -76,8 +76,9 @@ class FaceAnalysis:
                 embedding = self.rec_model.get_embedding(_img).flatten()
                 embedding_norm = norm(embedding)
                 normed_embedding = embedding / embedding_norm
-            if self.ga_model is not None:
-                gender, age = self.ga_model.get(_img)
+            # if self.ga_model is not None:
+            #     gender, age = self.ga_model.get(_img)
+            gender,age = [-1,-1]
             face = Face(bbox=bbox,
                         landmark=landmark,
                         det_score=det_score,
